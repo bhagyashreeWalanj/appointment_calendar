@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home Component should display to Home Component 1`] = `
+<Fragment>
+  <div
+    className="event"
+  >
+    <ToastContainer
+      autoClose={5000}
+      closeButton={[Function]}
+      closeOnClick={true}
+      draggable={true}
+      draggableDirection="x"
+      draggablePercent={80}
+      hideProgressBar={false}
+      newestOnTop={false}
+      pauseOnFocusLoss={true}
+      pauseOnHover={true}
+      position="top-right"
+      role="alert"
+      rtl={false}
+      theme="light"
+      transition={[Function]}
+    />
+    <div
+      className="event__mentor"
+    >
+      <div
+        className="event__mentor_name"
+      >
+        <label
+          id="mentor_name"
+        >
+          Bhagyashree WALANJ
+        </label>
+      </div>
+      <div
+        className="event__mentor_title"
+      >
+        60 Minutes Meeting
+      </div>
+      <div
+        className="event__mentor_hours"
+      >
+        <span
+          className="event__mentor_hours_clock_icon"
+        >
+          <FaClock />
+           1 Hr
+        </span>
+      </div>
+    </div>
+    <div
+      className="event__calendar"
+    >
+      <h2>
+        Select Date and Time
+      </h2>
+      <Calendar
+        selectedDayFn={[Function]}
+      />
+    </div>
+    <div
+      className="event_timeslot"
+    >
+      <TimeSlots
+        mentor="Bhagyashree WALANJ"
+        scheduleCallFn={[MockFunction]}
+        selectedDate={2022-07-17T20:54:25.347Z}
+        slots={
+          Object {
+            "calendar": Array [
+              Object {
+                "date_time": "2022-07-24 00:37:02 +0200",
+              },
+              Object {
+                "date_time": "2022-07-24 03:31:50 +0200",
+              },
+              Object {
+                "date_time": "2022-07-24 12:13:56 +0200",
+              },
+              Object {
+                "date_time": "2022-07-25 20:49:10 +0200",
+              },
+            ],
+            "mentor": Object {
+              "name": "Max Mustermann",
+              "time_zone": "-03:00",
+            },
+          }
+        }
+      />
+    </div>
+  </div>
+</Fragment>
+`;

@@ -1,0 +1,13 @@
+.footer {
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.875rem;
+  text-align: center;
+  color: rgb(107 114 128);
+  line-height: 1.5rem;
+
+  &_text {
+    font-weight: 700;
+    color: rgb(59 130 246);
+  }
+}

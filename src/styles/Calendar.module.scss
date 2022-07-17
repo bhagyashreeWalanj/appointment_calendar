@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+.calendar {
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 40px 30px -20px rgba(0, 0, 0, 0.3);
+
+  .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 300;
+
+    .year {
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #0a3d62;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      transition-duration: 0.2s;
+      position: relative;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  .days {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    color: #999;
+    font-weight: 600;
+    margin-bottom: 15px;
+
+    span {
+      width: 50px;
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+    }
+  }
+
+  .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    .col_start_2 {
+      grid-column-start: 2;
+    }
+    .col_start_3 {
+      grid-column-start: 3;
+    }
+    .col_start_4 {
+      grid-column-start: 4;
+    }
+    .col_start_5 {
+      grid-column-start: 5;
+    }
+    .col_start_6 {
+      grid-column-start: 6;
+    }
+    .col_start_7 {
+      grid-column-start: 7;
+    }
+
+    button {
+      cursor: pointer;
+      outline: 0;
+      border: 0;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      justify-self: center;
+      align-self: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      margin: 2px;
+      transition-duration: 0.2s;
+      &.currentDay {
+        background-color: rgb(239 68 68);
+        color: #fff;
+      }
+      &.isNotToday {
+        background: #0a3d62;
+        color: #fff;
+        font-weight: 600;
+      }
+      &.nonSelectedCurrentDay {
+        color: rgb(239 68 68);
+      }
+      &.disable_days {
+        color: rgba(77, 80, 85, 0.6);
+        cursor: default;
+      }
+      &.today {
+        box-shadow: inset 0px 0px 0px 2px #0a3d62;
+      }
+
+      &:first-child {
+        grid-column: 3;
+      }
+
+      &:hover {
+        background: #eee;
+      }
+
+      &:focus {
+        background: #0a3d62;
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+}

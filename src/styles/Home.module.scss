@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.event {
+  background-color: white;
+  border: 1px solid rgba(77, 80, 85, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.08);
+
+  flex-wrap: wrap;
+  padding: 2rem 5rem 0 5rem;
+  margin: 2rem 6rem 0rem 6rem;
+  min-height: 40rem;
+  max-height: 40rem;
+
+  //   max-width: 100rem;
+  //   min-height: 65rem;
+  //   max-height: 60rem;
+  justify-content: center;
+  &__mentor {
+    flex: 1;
+    font-size: 1.6rem;
+    // padding: 3rem;
+    border-right: 1px solid rgba(77, 80, 85, 0.1);
+    &_name {
+      color: rgba(77, 80, 85, 0.6);
+      font-weight: bold;
+    }
+    &_title {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      line-height: 3.2rem;
+      font-weight: bold;
+      color: #4d5055;
+    }
+    &_hours {
+      margin-top: 2.5rem;
+      color: rgba(77, 80, 85, 0.6);
+      display: flex;
+      &_clock_icon {
+        margin-right: 1rem;
+      }
+    }
+  }
+  &_timeslot {
+    flex: 1;
+    padding: 3rem 1rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
