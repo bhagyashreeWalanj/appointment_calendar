@@ -4,6 +4,7 @@ import styles from '../styles/TimeSlots.module.scss'
 import { format } from 'date-fns'
 import Notification from './Notification'
 import { status } from '../actions/constants'
+import { ToastContainer } from 'react-toastify'
 
 interface ITimeSlots {
   selectedDate: Date
@@ -84,78 +85,83 @@ const TimeSlots = ({
   }
 
   return (
-    <div className={styles.timeslots}>
-      <div className={styles.timeslots__header}>
-        {format(selectedDate, 'PPPP')}
-      </div>
-      <div className={styles.timeslots__body}>
-        <input
-          type="radio"
-          name={`openCloseAccordion-${selectedDate.getDate()}`}
-          id="acc-close"
-          className={styles.hide_button}
-        />
-        <div className={styles.tabs}>
-          {timeSlots.map((slot: any, index: number) => {
-            return (
-              <div
-                className={styles.tab}
-                key={slot.timeSlot}
-                onClick={() => handleOnSlotClick(slot.status)}
-              >
-                <input
-                  id={`checkbox-${index}`}
-                  type="radio"
-                  name={`openCloseAccordion-${selectedDate.getDate()}`}
-                  style={{ display: 'none' }}
-                />
-
-                <label
-                  className={
-                    slot.status === status.AVAILABLE
-                      ? styles.tab_label
-                      : slot.status === status.NOT_AVAILABLE
-                      ? styles.allotted
-                      : styles.booked
-                  }
-                  id={`acc-open-${index}`}
-                  htmlFor={
-                    slot.status !== status.AVAILABLE ? '' : `checkbox-${index}`
-                  }
+    <>
+      <ToastContainer />
+      <div className={styles.timeslots}>
+        <div className={styles.timeslots__header}>
+          <h4>{format(selectedDate, 'PPPP')}</h4>
+        </div>
+        <div className={styles.timeslots__body}>
+          <input
+            type="radio"
+            name="openCloseAccordion"
+            id="acc-close"
+            className={styles.hide_button}
+          />
+          <div className={styles.tabs}>
+            {timeSlots.map((slot: any, index: number) => {
+              return (
+                <div
+                  className={styles.tab}
+                  key={slot.timeSlot}
+                  onClick={() => handleOnSlotClick(slot.status)}
                 >
-                  <span>{slot.timeSlot}</span>
-                  {slot.status}
-                </label>
-                <div className={styles.tab_content}>
-                  <h4>Reason for a Call :</h4>
                   <input
-                    type="text"
-                    name={`message_${index}`}
-                    className={styles.textBox}
-                    id={`message-${index}`}
-                    value={reason}
-                    onChange={(e) => handleOnChange(e)}
+                    id={`checkbox-${index}`}
+                    type="radio"
+                    name="openCloseAccordion"
+                    style={{ display: 'none' }}
                   />
-                  <button
-                    id={`submit-${index}`}
-                    type="submit"
-                    className={styles.confirmButton}
-                    onClick={() => handleSubmit(slot, `close_${index}`)}
+
+                  <label
+                    className={
+                      slot.status === status.AVAILABLE
+                        ? styles.tab_label
+                        : slot.status === status.NOT_AVAILABLE
+                        ? styles.allotted
+                        : styles.booked
+                    }
+                    id={`acc-open-${index}`}
+                    htmlFor={
+                      slot.status !== status.AVAILABLE
+                        ? ''
+                        : `checkbox-${index}`
+                    }
                   >
-                    Confirm
-                  </button>
+                    <span>{slot.timeSlot}</span>
+                    {slot.status}
+                  </label>
+                  <div className={styles.tab_content}>
+                    <h4>Reason for a Call :</h4>
+                    <input
+                      type="text"
+                      name={`message_${index}`}
+                      className={styles.textBox}
+                      id={`message-${index}`}
+                      value={reason}
+                      onChange={(e) => handleOnChange(e)}
+                    />
+                    <button
+                      id={`submit-${index}`}
+                      type="submit"
+                      className={styles.confirmButton}
+                      onClick={() => handleSubmit(slot, `close_${index}`)}
+                    >
+                      Confirm Call
+                    </button>
+                  </div>
+                  <label
+                    className={styles.box_close}
+                    id={`close_${index}`}
+                    htmlFor="acc-close"
+                  ></label>
                 </div>
-                <label
-                  className={styles.box_close}
-                  id={`close_${index}`}
-                  htmlFor="acc-close"
-                ></label>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -67,7 +67,7 @@ const Calendar = ({ selectedDayFn }: IReactCalendar) => {
     setSelectedDay(day)
     selectedDayFn(day)
   }
-
+  document.getElementById('acc-close')?.click()
   return (
     <div>
       <div className={style.calendar}>

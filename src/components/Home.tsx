@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FaClock } from 'react-icons/fa'
 import { ITimeSlot } from '../models/ITimeSlots'
-import { ToastContainer } from 'react-toastify'
 import TimeSlots from './TimeSlots'
 import Calendar from './Calendar'
 import styles from '../styles/Home.module.scss'
@@ -28,7 +27,6 @@ const Home = ({ timeSlots, fetchAllSlots, mentor, scheduleCall }: IHome) => {
   return (
     <>
       <div className={styles.event}>
-        <ToastContainer />
         {/* left container */}
         <div className={styles.event__mentor}>
           <div className={styles.event__mentor_name}>
