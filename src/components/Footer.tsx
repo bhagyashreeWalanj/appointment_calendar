@@ -9,19 +9,17 @@ const Footer = () => {
           <a
             className={style.footer_text}
             href="https://github.com/bhagyashreeWalanj"
-            target="_blank"
           >
-            Bhagyashree Walanj
+            {` Bhagyashree Walanj `}
           </a>
           .
         </p>
         <p>
           <a
             className={style.footer_text}
-            href="https://github.com/bhagyashreeWalanj"
-            target="_blank"
+            href="https://github.com/bhagyashreeWalanj/appointment_calendar"
           >
-            Source code
+            {` Source code `}
           </a>
           available on GitHub.
         </p>

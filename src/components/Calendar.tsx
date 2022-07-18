@@ -59,9 +59,9 @@ const Calendar = ({ selectedDayFn }: IReactCalendar) => {
   }
 
   useEffect(() => {
-    const weeks = getWeekNames(today)
+    const weeks = getWeekNames(selectedDay)
     setWeekDays(weeks)
-  }, [])
+  }, [selectedDay])
 
   const handleOnSelectDate = (day: Date) => {
     setSelectedDay(day)
